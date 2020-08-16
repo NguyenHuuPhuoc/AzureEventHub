@@ -26,14 +26,14 @@ namespace AzureEventHub
                     _hubs.TryRemove(key, out _);
                 }
 
-                var eventBus = _hubs.GetOrAdd(key, (_) =>
+                var eventHub = _hubs.GetOrAdd(key, (_) =>
                 {
                     var client = new EventHubProducerClient(_connectionString, key);
 
                     return new AzureEventHub(client);
                 });
 
-                return eventBus;
+                return eventHub;
             }
         }
 
