@@ -15,7 +15,7 @@ namespace AzureEventHub
         private bool _isDisposed;
         bool IEventHub.IsClosed => _eventHubProducerClient.IsClosed;
 
-        internal AzureEventHub(EventHubProducerClient eventHubProducerClient)
+        public AzureEventHub(EventHubProducerClient eventHubProducerClient)
         {
             _eventHubProducerClient = eventHubProducerClient;
         }

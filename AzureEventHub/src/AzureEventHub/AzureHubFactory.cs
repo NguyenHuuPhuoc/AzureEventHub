@@ -12,7 +12,7 @@ namespace AzureEventHub
         private readonly object _syncLock = new object();
         private bool _isDisposed = false;
 
-        internal AzureHubFactory(string connectionString)
+        public AzureHubFactory(string connectionString)
         {
             _connectionString = connectionString;
         }
