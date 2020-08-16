@@ -22,7 +22,7 @@ namespace SendEvent.Controllers
             if (ModelState.IsValid)
                 return BadRequest();
 
-            var key = "test";
+            var key = "User";
             var eventHub = _eventHubFactory.CreateAzureEventHub(key);
             await eventHub.PublishAsync<UserModel>(request, Action.AddNew.ToString(), GenerateCacheKey(request.Name));
 
